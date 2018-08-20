@@ -20,7 +20,7 @@ if (env === 'es' || env === 'cjs') {
 }
 
 if (env === 'development' || env === 'production') {
-  config.output = { format: 'umd', name: 'Redux', indent: false }
+  config.output = { format: 'umd', name: 'LittleUtils', indent: false }
   config.plugins.push(
     nodeResolve({
       jsnext: true
