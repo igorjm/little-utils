@@ -1,1 +1,5 @@
-function test() {}
+import compose from './compose'
+
+export {
+  compose,
+}
