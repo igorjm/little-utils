@@ -1,11 +1,16 @@
 {
-  "name": "little-utils",
+  "name": "@little-org/little-utils",
   "version": "0.0.0",
   "description": "Little lib with utils functions for Javascript",
   "license": "MIT",
   "homepage": "http://onluiz.github.io/little-utils",
-  "repository": "github:onluiz/little-utils",
-  "bugs": "https://github.com/onluiz/little-utils/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onluiz/little-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onluiz/little-utils/issues"
+  },
   "keywords": [
     "utils",
     "reducer",
@@ -95,5 +100,11 @@
   "jest": {
     "testRegex": "(/test/.*\\.spec.js)$"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "little-org"
 }
