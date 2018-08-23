@@ -21,9 +21,18 @@ export function isNaN() {
 }
 
 export function isNumber() {
-  
+
 }
 
 export function isUndefined(v) {
   return typeof v === 'undefined'
+}
+
+export default {
+  isObject,
+  isFunction,
+  isInfinity,
+  isNaN,
+  isNumber,
+  isUndefined,
 }
