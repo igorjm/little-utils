@@ -1,4 +1,6 @@
-## Little Utils
+## penknife
+
+[![npm version](https://badge.fury.io/js/%40little-org%2Fpenknife.svg)](https://badge.fury.io/js/%40little-org%2Fpenknife)
 
 An opinionated easy to use javascript utils lib
 
