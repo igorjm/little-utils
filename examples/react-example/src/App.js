@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { types } from '@little-org/penknife'
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
+    console.log('types', types)
     return (
       <div className="App">
         <header className="App-header">
