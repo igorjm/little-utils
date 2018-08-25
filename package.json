@@ -1,6 +1,6 @@
 {
   "name": "@little-org/penknife",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Little lib with utils functions for Javascript",
   "license": "MIT",
   "homepage": "http://onluiz.github.io/penknife-js",
