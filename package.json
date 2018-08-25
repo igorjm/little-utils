@@ -1,15 +1,15 @@
 {
-  "name": "@little-org/little-utils",
+  "name": "@little-org/penknife-js",
   "version": "0.0.2",
   "description": "Little lib with utils functions for Javascript",
   "license": "MIT",
-  "homepage": "http://onluiz.github.io/little-utils",
+  "homepage": "http://onluiz.github.io/penknife-js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/onluiz/little-utils.git"
+    "url": "git+https://github.com/onluiz/penknife-js.git"
   },
   "bugs": {
-    "url": "https://github.com/onluiz/little-utils/issues"
+    "url": "https://github.com/onluiz/penknife-js/issues"
   },
   "keywords": [
     "utils",
@@ -22,9 +22,9 @@
   "authors": [
     "Luiz Alberto <luiz.alberto1723@gmail.com> (https://github.com/onluiz)"
   ],
-  "main": "lib/littleutils.js",
-  "unpkg": "dist/littleutils.js",
-  "module": "es/littleutils.js",
+  "main": "lib/penknife.js",
+  "unpkg": "dist/penknife.js",
+  "module": "es/penknife.js",
   "typings": "./index.d.ts",
   "files": [
     "dist",
@@ -41,10 +41,10 @@
     "test": "cross-env BABEL_ENV=commonjs jest",
     "test:watch": "npm test -- --watch",
     "test:cov": "npm test -- --coverage",
-    "build:commonjs": "cross-env NODE_ENV=cjs rollup -c -o lib/littleutils.js",
-    "build:es": "cross-env BABEL_ENV=es NODE_ENV=es rollup -c -o es/littleutils.js",
-    "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c -o dist/littleutils.js",
-    "build:umd:min": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c -o dist/littleutils.min.js",
+    "build:commonjs": "cross-env NODE_ENV=cjs rollup -c -o lib/penknife.js",
+    "build:es": "cross-env BABEL_ENV=es NODE_ENV=es rollup -c -o es/penknife.js",
+    "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c -o dist/penknife.js",
+    "build:umd:min": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c -o dist/penknife.min.js",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
     "prepare": "npm run clean && npm run lint && npm test",
     "examples:lint": "eslint examples",
@@ -83,7 +83,7 @@
     "typescript": "^3.0.1",
     "typings-tester": "^0.3.1"
   },
-  "npmName": "littleutils",
+  "npmName": "penknife",
   "npmFileMap": [
     {
       "basePath": "/dist/",
