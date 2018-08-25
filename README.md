@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/little-org/penknife-js.svg?branch=master)](https://travis-ci.com/little-org/penknife-js)
 [![npm version](https://badge.fury.io/js/%40little-org%2Fpenknife.svg)](https://badge.fury.io/js/%40little-org%2Fpenknife)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/little-org/penknife-js)
+[![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 
 An opinionated easy to use javascript utils lib
 
