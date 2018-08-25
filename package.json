@@ -46,7 +46,7 @@
     "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c -o dist/penknife.js",
     "build:umd:min": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c -o dist/penknife.min.js",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
-    "prepare": "npm run clean && npm run format:check && npm run lint && npm test && npm run build",
+    "prepare": "npm run clean && npm run lint && npm test && npm run build",
     "examples:lint": "eslint examples",
     "examples:test": "cross-env CI=true babel-node examples/testAll.js"
   },
