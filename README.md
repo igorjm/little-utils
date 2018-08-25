@@ -19,7 +19,7 @@ A project must have some interesting parts to works properly:
 All of those parts requires time and persistence from developers to learn how to search/validates/tests/implement. This is the type of learning that motivates us to create this library.
 
 ### Usage
-With npm: npm install @little-org/little-utils
+With npm: `npm i @little-org/penknife`
 
 ### Credits
 - To [redux](https://github.com/reduxjs/redux) repository: this project architecture is based on Redux's. This decision was made based on redux architecture maturity
