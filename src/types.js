@@ -23,6 +23,14 @@ export function isNaN() {
 export function isNumber() {
 }
 
+export function isString(value) {
+  return typeof value === 'string'
+}
+
+export function isNotString(value) {
+  return !isString(value)
+}
+
 export function isUndefined(value) {
   return typeof value === 'undefined'
 }

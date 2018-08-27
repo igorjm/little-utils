@@ -2,6 +2,8 @@ import {
   isObject,
   isFunction,
   isUndefined,
+  isString,
+  isNotString,
   isArray,
   isNotArray,
 } from '../src/types'
@@ -127,6 +129,52 @@ describe('types', () => {
         return [...array]
       })())).toBeFalsy()
       expect(isNotArray([].map(item => item))).toBeFalsy()
+    })
+  })
+
+  describe('string', () => {
+    it ('must return false if an non-string is passed', () => {
+      expect(isString({})).toBeFalsy()
+      expect(isString(0)).toBeFalsy()
+      expect(isString(null)).toBeFalsy()
+      expect(isString(undefined)).toBeFalsy()
+      expect(isString(true)).toBeFalsy()
+      expect(isString(NaN)).toBeFalsy()
+      expect(isString(arg => arg)).toBeFalsy()
+      expect(isString(() => {})).toBeFalsy()
+      expect(isString(function() {})).toBeFalsy()
+      expect(isString(function func() {})).toBeFalsy()
+      expect(isString(function*() {})).toBeFalsy()
+    })
+
+    it ('must return true if a string is passed', () => {
+      expect(isString('')).toBeTruthy()
+      expect(isString(new String('').toString())).toBeTruthy()
+      expect(isString('Hi!')).toBeTruthy()
+      expect(isString([].toString())).toBeTruthy()
+    })
+  })
+
+  describe('not string', () => {
+    it ('must return true if an non-string is passed', () => {
+      expect(isNotString({})).toBeTruthy()
+      expect(isNotString(0)).toBeTruthy()
+      expect(isNotString(null)).toBeTruthy()
+      expect(isNotString(undefined)).toBeTruthy()
+      expect(isNotString(true)).toBeTruthy()
+      expect(isNotString(NaN)).toBeTruthy()
+      expect(isNotString(arg => arg)).toBeTruthy()
+      expect(isNotString(() => {})).toBeTruthy()
+      expect(isNotString(function() {})).toBeTruthy()
+      expect(isNotString(function func() {})).toBeTruthy()
+      expect(isNotString(function*() {})).toBeTruthy()
+    })
+
+    it ('must return false if a string is passed', () => {
+      expect(isNotString('')).toBeFalsy()
+      expect(isNotString(new String('').toString())).toBeFalsy()
+      expect(isNotString('Hi!')).toBeFalsy()
+      expect(isNotString([].toString())).toBeFalsy()
     })
   })
 })
