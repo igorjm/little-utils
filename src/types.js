@@ -1,9 +1,9 @@
-export function isObject(v) {
-  return v && typeof v === 'object'
+export function isObject(value) {
+  return value && typeof value === 'object'
 }
 
-export function isFunction(v) {
-  return v && typeof v === 'function'
+export function isFunction(value) {
+  return value && typeof value === 'function'
 }
 
 export function isInfinity() {
@@ -24,8 +24,8 @@ export function isNumber() {
 
 }
 
-export function isUndefined(v) {
-  return typeof v === 'undefined'
+export function isUndefined(value) {
+  return typeof value === 'undefined'
 }
 
 export function isArray(value) {
