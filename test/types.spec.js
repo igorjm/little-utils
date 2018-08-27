@@ -1,4 +1,10 @@
-import { isObject, isFunction, isUndefined } from '../src/types'
+import {
+  isObject,
+  isFunction,
+  isUndefined,
+  isArray,
+  isNotArray,
+} from '../src/types'
 
 describe('types', () => {
 
@@ -65,6 +71,62 @@ describe('types', () => {
       expect(isUndefined({})).toBeFalsy()
       expect(isUndefined(Object.create(function Test() {}))).toBeFalsy()
       expect(isUndefined(new Date())).toBeFalsy()
+    })
+  })
+
+  describe('array', () => {
+    it ('must return false if non-array is passed', () => {
+      expect(isArray('')).toBeFalsy()
+      expect(isArray(0)).toBeFalsy()
+      expect(isArray(null)).toBeFalsy()
+      expect(isArray(true)).toBeFalsy()
+      expect(isArray(NaN)).toBeFalsy()
+      expect(isArray({})).toBeFalsy()
+      expect(isArray(Object.create(function Test() {}))).toBeFalsy()
+      expect(isArray(new Date())).toBeFalsy()
+    })
+
+    it ('must return true if an array is passed', () => {
+      expect(isArray([])).toBeTruthy()
+      expect(isArray([1, 2, 3])).toBeTruthy()
+      expect(isArray(new Array())).toBeTruthy()
+      expect(isArray([].map(item => item))).toBeTruthy()
+      expect(isArray([].filter(item => item))).toBeTruthy()
+      expect(isArray(Object.keys([1, 2, 3]))).toBeTruthy()
+      expect(isArray(/d(b+)(d)/i.exec('cdbBdbsbz'))).toBeTruthy()
+      expect(isArray((function() {
+        const array = [1, 2, 3]
+        return [...array]
+      })())).toBeTruthy()
+      expect(isArray([].map(item => item))).toBeTruthy()
+    })
+  })
+
+  describe('not array', () => {
+    it ('must return false if non-array is passed', () => {
+      expect(isNotArray('')).toBeTruthy()
+      expect(isNotArray(0)).toBeTruthy()
+      expect(isNotArray(null)).toBeTruthy()
+      expect(isNotArray(true)).toBeTruthy()
+      expect(isNotArray(NaN)).toBeTruthy()
+      expect(isNotArray({})).toBeTruthy()
+      expect(isNotArray(Object.create(function Test() {}))).toBeTruthy()
+      expect(isNotArray(new Date())).toBeTruthy()
+    })
+
+    it ('must return true if an array is passed', () => {
+      expect(isNotArray([])).toBeFalsy()
+      expect(isNotArray([1, 2, 3])).toBeFalsy()
+      expect(isNotArray(new Array())).toBeFalsy()
+      expect(isNotArray([].map(item => item))).toBeFalsy()
+      expect(isNotArray([].filter(item => item))).toBeFalsy()
+      expect(isNotArray(Object.keys([1, 2, 3]))).toBeFalsy()
+      expect(isNotArray(/d(b+)(d)/i.exec('cdbBdbsbz'))).toBeFalsy()
+      expect(isNotArray((function() {
+        const array = [1, 2, 3]
+        return [...array]
+      })())).toBeFalsy()
+      expect(isNotArray([].map(item => item))).toBeFalsy()
     })
   })
 })

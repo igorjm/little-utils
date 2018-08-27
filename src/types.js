@@ -28,6 +28,14 @@ export function isUndefined(v) {
   return typeof v === 'undefined'
 }
 
+export function isArray(value) {
+  return value instanceof Array
+}
+
+export function isNotArray(value) {
+  return !isArray(value)
+}
+
 export default {
   isObject,
   isFunction,
