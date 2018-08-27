@@ -1,3 +1,4 @@
+import { isString } from './types'
 /**
  * Valid date criterias:
  * 1. must be defined
@@ -14,7 +15,7 @@ export function isValidDate(value) {
  * 2. value is higher than 0 (zero)
  * @param {} value 
  */
-export function isValidArray(value) {
+export function isValidArray(value, minimum = 0) {
 }
 
 /**
