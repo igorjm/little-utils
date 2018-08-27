@@ -1,4 +1,4 @@
-penknife
+penknife-js
 =======
 
 [![Build Status](https://travis-ci.com/little-org/penknife-js.svg?branch=master)](https://travis-ci.com/little-org/penknife-js)
@@ -21,6 +21,9 @@ All of those parts requires time and persistence from developers to learn how to
 
 ### Usage
 With npm: `npm i @little-org/penknife`
+
+### Docs
+Soon =)
 
 ### Credits
 - To [redux](https://github.com/reduxjs/redux) repository: this project architecture is based on Redux's. This decision was made based on redux architecture maturity
