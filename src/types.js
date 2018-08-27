@@ -21,7 +21,6 @@ export function isNaN() {
 }
 
 export function isNumber() {
-
 }
 
 export function isUndefined(value) {
@@ -34,6 +33,9 @@ export function isArray(value) {
 
 export function isNotArray(value) {
   return !isArray(value)
+}
+
+export function isPromise(value) {
 }
 
 export default {
