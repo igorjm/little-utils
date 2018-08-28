@@ -46,3 +46,7 @@ export function isValidKeyNumber(value) {
  */
 export function isValidHumanAge(value) {
 }
+
+export default {
+  isValidString,
+}
