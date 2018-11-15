@@ -1,3 +1,6 @@
+'use strict';
+
+const includes = require('lodash.includes');
 import { danger, warn } from "danger";
 
 // No PR is too small to include a description of why you made a change
