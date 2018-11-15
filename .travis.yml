@@ -4,6 +4,8 @@ node_js:
 install:
   - npm i -g npm@5.8.0
   - npm ci
+before_script:
+  - npx danger ci
 script:
   - npm run examples:lint
   - npm run examples:test
