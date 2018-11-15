@@ -8,6 +8,15 @@ if (danger.github.pr.body.length < 10) {
   warn("Please include a description of your PR changes.");
 }
 
+// Warns if there are changes to package.json, and tags the team.
+const packageChanged = includes(danger.git.modified_files, 'package.json');
+if (packageChanged) {
+  const title = ':lock: package.json';
+  const idea =
+    'Changes were made to package.json. ';
+  warn(`${title} - <i>${idea}</i>`);
+}
+
 // Check for a CHANGELOG entry
 const hasChangelog = danger.git.modified_files.some(f => f === "CHANGELOG.md");
 const description = danger.github.pr.body + danger.github.pr.title;
