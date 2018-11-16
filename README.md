@@ -1,9 +1,9 @@
 penknife-js
 =======
 
-[![Build Status](https://travis-ci.com/little-org/penknife-js.svg?branch=master)](https://travis-ci.com/little-org/penknife-js)
-[![npm version](https://badge.fury.io/js/%40little-org%2Fpenknife.svg)](https://badge.fury.io/js/%40little-org%2Fpenknife)
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/little-org/penknife-js)
+[![Build Status](https://travis-ci.com/onluiz/penknife-js.svg?branch=master)](https://travis-ci.com/onluiz/penknife-js)
+[![npm version](https://badge.fury.io/js/%40onluiz%2Fpenknife.svg)](https://badge.fury.io/js/%40onluiz%2Fpenknife)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/onluiz/penknife-js)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 
 An opinionated easy to use javascript utils lib
@@ -20,7 +20,7 @@ A project must have some interesting parts to works properly:
 All of those parts requires time and persistence from developers to learn how to search/validates/tests/implement. This is the type of learning that motivates us to create this library.
 
 ### Usage
-With npm: `npm i @little-org/penknife`
+With npm: `npm i @onluiz/penknife`
 
 ### Docs
 Soon =)
