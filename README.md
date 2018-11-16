@@ -1,7 +1,7 @@
 penknife-js
 =======
 
-[![Build Status](https://travis-ci.com/onluiz/penknife-js.svg?branch=master)](https://travis-ci.com/onluiz/penknife-js)
+[![Build Status](https://travis-ci.org/onluiz/penknife-js.svg?branch=master)](https://travis-ci.org/onluiz/penknife-js)
 [![npm version](https://badge.fury.io/js/%40onluiz%2Fpenknife.svg)](https://badge.fury.io/js/%40onluiz%2Fpenknife)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/onluiz/penknife-js)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
