@@ -1,5 +1,5 @@
 {
-  "name": "@onluiz/penknife",
+  "name": "penknife",
   "version": "0.0.0",
   "description": "Little lib with utils functions for Javascript",
   "license": "MIT",
