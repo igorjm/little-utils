@@ -2,6 +2,7 @@ import {
   isObject,
   isFunction,
   isUndefined,
+  isNumber,
   isString,
   isNotString,
   isArray,
@@ -196,6 +197,30 @@ describe('types', () => {
 
     it ('must return true if a promise is passed', () => {
       expect(isPromise(new Promise(resolve => resolve()))).toBeTruthy()
+    })
+  })
+
+  describe('number', () => {
+    it ('must return false if an non-number is passed', () => {
+      expect(isNumber({})).toBeFalsy()
+      expect(isNumber(null)).toBeFalsy()
+      expect(isNumber(undefined)).toBeFalsy()
+      expect(isNumber(true)).toBeFalsy()
+      expect(isNumber(NaN)).toBeFalsy()
+      expect(isNumber(arg => arg)).toBeFalsy()
+      expect(isNumber(() => {})).toBeFalsy()
+      expect(isNumber(function() {})).toBeFalsy()
+      expect(isNumber(function func() {})).toBeFalsy()
+      expect(isNumber(function*() {})).toBeFalsy()
+      expect(isNumber('200000001a')).toBeFalsy()
+      expect(isNumber(0 / 0)).toBeFalsy() // 0 / 0 returns NaN
+    })
+
+    it ('must return true if a number is passed', () => {
+      expect(isNumber(1)).toBeTruthy()
+      expect(isNumber(10.000)).toBeTruthy()
+      expect(isNumber(0.1)).toBeTruthy()
+      expect(isNumber(10.1 / 2)).toBeTruthy()
     })
   })
 })

@@ -16,11 +16,8 @@ export function isInfinity() {
    */
 }
 
-export function isNaN() {
-  // NaN
-}
-
-export function isNumber() {
+export function isNumber(value) {
+  return !isNaN(value) && typeof value === 'number'
 }
 
 export function isString(value) {
