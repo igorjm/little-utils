@@ -6,14 +6,8 @@ export function isFunction(value) {
   return value && typeof value === 'function'
 }
 
-export function isInfinity() {
-  // Infinity
-  /**
-   * > 42 / +0
-    Infinity
-    > 42 / -0
-    -Infinity
-   */
+export function isInfinity(value) {
+  return value === Infinity
 }
 
 export function isNumber(value) {

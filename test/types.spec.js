@@ -1,6 +1,7 @@
 import {
   isObject,
   isFunction,
+  isInfinity,
   isUndefined,
   isNumber,
   isString,
@@ -221,6 +222,27 @@ describe('types', () => {
       expect(isNumber(10.000)).toBeTruthy()
       expect(isNumber(0.1)).toBeTruthy()
       expect(isNumber(10.1 / 2)).toBeTruthy()
+      expect(isNumber(2e64)).toBeTruthy()
+    })
+
+    it ('must return false if a finit number is passed', () => {
+      expect(isInfinity({})).toBeFalsy()
+      expect(isInfinity(null)).toBeFalsy()
+      expect(isInfinity(undefined)).toBeFalsy()
+      expect(isInfinity(true)).toBeFalsy()
+      expect(isInfinity(NaN)).toBeFalsy()
+      expect(isInfinity(arg => arg)).toBeFalsy()
+      expect(isInfinity(() => {})).toBeFalsy()
+      expect(isInfinity(function() {})).toBeFalsy()
+      expect(isInfinity(function func() {})).toBeFalsy()
+      expect(isInfinity(function*() {})).toBeFalsy()
+      expect(isInfinity('200000001a')).toBeFalsy()
+      expect(isInfinity(0 / 0)).toBeFalsy() // 0 / 0 returns NaN
+    })
+
+    it ('must return true if an infinity number is passed', () => {
+      expect(isInfinity(Math.pow(10, 1000))).toBeTruthy()
+      expect(isInfinity(Infinity)).toBeTruthy()
     })
   })
 })
