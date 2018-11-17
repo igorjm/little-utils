@@ -44,6 +44,7 @@ export function isNotArray(value) {
 }
 
 export function isPromise(value) {
+  return value instanceof Promise
 }
 
 export default {

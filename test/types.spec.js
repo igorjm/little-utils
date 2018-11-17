@@ -6,6 +6,7 @@ import {
   isNotString,
   isArray,
   isNotArray,
+  isPromise,
 } from '../src/types'
 
 describe('types', () => {
@@ -175,6 +176,26 @@ describe('types', () => {
       expect(isNotString(new String('').toString())).toBeFalsy()
       expect(isNotString('Hi!')).toBeFalsy()
       expect(isNotString([].toString())).toBeFalsy()
+    })
+  })
+
+  describe('promise', () => {
+    it ('must return false if an non-promise is passed', () => {
+      expect(isPromise({})).toBeFalsy()
+      expect(isPromise(0)).toBeFalsy()
+      expect(isPromise(null)).toBeFalsy()
+      expect(isPromise(undefined)).toBeFalsy()
+      expect(isPromise(true)).toBeFalsy()
+      expect(isPromise(NaN)).toBeFalsy()
+      expect(isPromise(arg => arg)).toBeFalsy()
+      expect(isPromise(() => {})).toBeFalsy()
+      expect(isPromise(function() {})).toBeFalsy()
+      expect(isPromise(function func() {})).toBeFalsy()
+      expect(isPromise(function*() {})).toBeFalsy()
+    })
+
+    it ('must return true if a promise is passed', () => {
+      expect(isPromise(new Promise(resolve => resolve()))).toBeTruthy()
     })
   })
 })
