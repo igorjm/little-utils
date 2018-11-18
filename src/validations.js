@@ -1,4 +1,4 @@
-import { isString } from './types'
+import { isObject } from './types'
 /**
  * Valid date criterias:
  * 1. must be defined
@@ -48,7 +48,7 @@ export function isValidHumanAge(value) {
 }
 
 export function isValidObject(value) {
-  if (!value) {
+  if (!isObject(value)) {
     return false;
   }
   return Object.keys(value).length > 0 && value.constructor === Object;

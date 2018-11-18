@@ -1,18 +1,23 @@
 import {
-  isValidString,
+  isValidObject,
 } from '../src/validations'
 
 describe('validations', () => {
-  describe('string', () => {
-    it('must return false if an non-string is passed', () => {
+  describe('isValidObject', () => {
+    
+    it('must return false if an non-valid object is passed', () => {
+      expect(isValidObject()).toBeFalsy();
+      expect(isValidObject(undefined)).toBeFalsy();
+      expect(isValidObject(null)).toBeFalsy();
+      expect(isValidObject(Infinity)).toBeFalsy();
+      expect(isValidObject(-Infinity)).toBeFalsy();
+      expect(isValidObject()).toBeFalsy();
+      expect(isValidObject({})).toBeFalsy();
     })
-    it('must return false if an empty string is passed', () => {
+    
+    it('must return true if a valid object is passed', () => {
+      expect(isValidObject({id: 1, name: 'hi!'})).toBeTruthy();
     })
-    it('must return false if string length is not higher than criteria', () => {
-    })
-    it('must return true if passed string length is higher than 0', () => {
-    })
-    it('must return true if passed string is higher than criteria', () => {
-    })
+
   })
 })
