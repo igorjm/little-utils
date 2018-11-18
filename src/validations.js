@@ -47,6 +47,13 @@ export function isValidKeyNumber(value) {
 export function isValidHumanAge(value) {
 }
 
+export function isValidObject(value) {
+  if (!value) {
+    return false;
+  }
+  return Object.keys(value).length > 0 && value.constructor === Object;
+}
+
 export default {
   isValidString,
 }
