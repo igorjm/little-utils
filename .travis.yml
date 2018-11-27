@@ -7,9 +7,7 @@ install:
 before_script:
   - npx danger ci
 script:
-  - npm run examples:lint
-  - npm run examples:test
-  - npm run prepare
+  - npx lerna run prepare
 branches:
   only:
     - master
