@@ -7,7 +7,7 @@ install:
 before_script:
   - npx danger ci
 script:
-  - npx lerna run prepare
+  - npx lerna run prepare:ci
 branches:
   only:
     - master
