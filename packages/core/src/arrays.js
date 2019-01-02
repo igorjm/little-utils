@@ -1,11 +1,12 @@
 import {
   isArray,
-  isInfinity,
   isObject,
+  isNumber,
 } from './types'
 import {
   isValidObject
 } from './validations'
+import { isValidNumber } from './numbers'
 
 /**
  * A performatic array must:
@@ -77,11 +78,7 @@ export function isValidArrayItemType(value, allowThese = []) {
     return false;
   }
 
-  if (isInfinity(value)) {
-    return false;
-  }
-
-  if (value === -Infinity) {
+  if (isNumber(value) && !isValidNumber(value)) {
     return false;
   }
 
