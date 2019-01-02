@@ -64,7 +64,9 @@ export function isValidArray(array, allowThese = []) {
 
 /**
  * Verifies if received value's type is invalid
+ * If allowThese is empty, default validations will be made
  * @param {any} value
+ * @param {array} allowThese
  */
 export function isValidArrayItemType(value, allowThese = []) {
   if (allowThese.length > 0) {
