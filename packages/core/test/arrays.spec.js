@@ -58,26 +58,41 @@ describe('arrays', () => {
   })
 
   describe('isArrayItemTypeAllowed', () => {
+    const assertArrayItemTypeAllowed = (condition = false, allowedTypes) => {
+      expect(isArrayItemTypeAllowed(1, allowedTypes)).toBe(condition);
+      expect(isArrayItemTypeAllowed(Infinity, allowedTypes)).toBe(condition);
+      expect(isArrayItemTypeAllowed(-Infinity, allowedTypes)).toBe(condition);
+      expect(isArrayItemTypeAllowed(NaN, allowedTypes)).toBe(condition);
+      expect(isArrayItemTypeAllowed('hi', allowedTypes)).toBe(condition);
+      expect(isArrayItemTypeAllowed(null, allowedTypes)).toBe(condition);
+      expect(isArrayItemTypeAllowed(undefined, allowedTypes)).toBe(condition);
+    }
     it ('must return true if passed item type is in the allowed list', () => {
-      const customAllowedTypes = ['number', 'string', 'object', 'undefined']
-      expect(isArrayItemTypeAllowed(1, customAllowedTypes)).toBeTruthy();
-      expect(isArrayItemTypeAllowed(Infinity, customAllowedTypes)).toBeTruthy();
-      expect(isArrayItemTypeAllowed(-Infinity, customAllowedTypes)).toBeTruthy();
-      expect(isArrayItemTypeAllowed(NaN, customAllowedTypes)).toBeTruthy();
-      expect(isArrayItemTypeAllowed('hi', customAllowedTypes)).toBeTruthy();
-      expect(isArrayItemTypeAllowed(null, customAllowedTypes)).toBeTruthy();
-      expect(isArrayItemTypeAllowed(undefined, customAllowedTypes)).toBeTruthy();
+      const customAllowedTypes = ['number', 'string', 'object', 'undefined', 'date']
+      const mustReturn = true
+      assertArrayItemTypeAllowed(mustReturn, customAllowedTypes);
     })
 
     it ('must return false if passed item type is not in the allowed list', () => {
       const customAllowedTypes = []
-      expect(isArrayItemTypeAllowed(1, customAllowedTypes)).toBeFalsy();
-      expect(isArrayItemTypeAllowed(Infinity, customAllowedTypes)).toBeFalsy();
-      expect(isArrayItemTypeAllowed(-Infinity, customAllowedTypes)).toBeFalsy();
-      expect(isArrayItemTypeAllowed(NaN, customAllowedTypes)).toBeFalsy();
-      expect(isArrayItemTypeAllowed('hi', customAllowedTypes)).toBeFalsy();
-      expect(isArrayItemTypeAllowed(null, customAllowedTypes)).toBeFalsy();
-      expect(isArrayItemTypeAllowed(undefined, customAllowedTypes)).toBeFalsy();
+      const mustReturn = false
+      assertArrayItemTypeAllowed(mustReturn, customAllowedTypes);
+    })
+
+    it ('must return false if no types are allowed', () => {
+      const customAllowedTypes = undefined
+      const mustReturn = false
+      assertArrayItemTypeAllowed(mustReturn, customAllowedTypes);
+    })
+
+    it ('must return true if the only one type passed is allowed', () => {
+      const customAllowedTypes = ['string']
+      expect(isArrayItemTypeAllowed('hi!', customAllowedTypes)).toBe(true);
+    })
+
+    it ('must return false if the only one type passed is not allowed', () => {
+      const customAllowedTypes = ['string']
+      expect(isArrayItemTypeAllowed(123, customAllowedTypes)).toBe(false);
     })
   })
 

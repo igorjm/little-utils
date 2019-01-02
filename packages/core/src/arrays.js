@@ -90,19 +90,12 @@ export function isValidArrayItemType(value, allowThese = []) {
   return true
 }
 
-export function isArrayItemTypeAllowed(value, allowedTypes) {
+export function isArrayItemTypeAllowed(value, allowedTypes = []) {
   let isItemTypeAllowed = false
-
-  if (allowedTypes.length === 1) {
-    isItemTypeAllowed = typeof value === allowedTypes[0]
+  let count = 0
+  while (!isItemTypeAllowed && count < allowedTypes.length) {
+    isItemTypeAllowed = typeof value === allowedTypes[count]
+    count++
   }
-  else {
-    let count = 0
-    while (!isItemTypeAllowed && count < allowedTypes.length) {
-      isItemTypeAllowed = typeof value === allowedTypes[count]
-      count++
-    }
-  }
-
   return isItemTypeAllowed;
 }
