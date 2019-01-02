@@ -11,7 +11,7 @@ import {
  * A performatic array must:
  * - If empty, have a defined number of items
  * - If not empty, all items must be of the same type
- * @param {*} array 
+ * @param {*} array
  */
 export function isPerformaticArray(array) {
 }
@@ -19,7 +19,7 @@ export function isPerformaticArray(array) {
 /**
  * Array must:
  * - have at least one (1) item
- * 
+ *
  * All items in array must NOT be:
  * - undefined
  * - null
@@ -27,28 +27,28 @@ export function isPerformaticArray(array) {
  * - Infinity
  * - -Infinity
  * - empty object {}
- * 
+ *
  * @category Array
  * @param {*} array
  * @returns {boolean} true if valid array, false if not
- * 
+ *
  * @example
- * 
+ *
  * const allow = undefined
  * isValidArray(array, allow) allows undefined items in the array
- * 
+ *
  * const allow = [undefined, null]
  * isValidArray(array, allow)  allows undefined AND null items in the array
- * 
+ *
  * isValidArray(array) undefined, null, NaN, Infinity, -Infinity and empty objects are NOT allowed by default
- * 
+ *
  */
 export function isValidArray(array, allowThese = []) {
   if (!isArray(array)) {
     return false;
   }
 
-  if (array.length == 0) {
+  if (array.length === 0) {
     return false;
   }
 
@@ -64,7 +64,9 @@ export function isValidArray(array, allowThese = []) {
 
 /**
  * Verifies if received value's type is invalid
- * @param {any} value 
+ * If allowThese is empty, default validations will be made
+ * @param {any} value
+ * @param {array} allowThese
  */
 export function isValidArrayItemType(value, allowThese = []) {
   if (allowThese.length > 0) {
@@ -86,23 +88,16 @@ export function isValidArrayItemType(value, allowThese = []) {
   if (isObject(value) && !isValidObject(value)) {
     return false;
   }
-  
+
   return true
 }
 
-export function isArrayItemTypeAllowed(value, allowedTypes) {
+export function isArrayItemTypeAllowed(value, allowedTypes = []) {
   let isItemTypeAllowed = false
-
-  if (allowedTypes.length === 1) {
-    isItemTypeAllowed = typeof value === allowedTypes[0]
+  let count = 0
+  while (!isItemTypeAllowed && count < allowedTypes.length) {
+    isItemTypeAllowed = typeof value === allowedTypes[count]
+    count++
   }
-  else {
-    let count = 0
-    while (!isItemTypeAllowed && count < allowedTypes.length) {
-      isItemTypeAllowed = typeof value === allowedTypes[count]
-      count++
-    }
-  }
-
   return isItemTypeAllowed;
 }
