@@ -1,19 +1,16 @@
-import { isValidNumber } from '../src/numbers'
+import { isValidNumber } from '../src/numbers';
+
 describe('numbers', () => {
   describe('isValidNumber', () => {
-
-    it('must return false if a non-valid number is passed', () => {
-      expect(isValidNumber('a')).toBe(false)
-      expect(isValidNumber(Infinity)).toBe(false)
-      expect(isValidNumber(-Infinity)).toBe(false)
-      expect(isValidNumber(NaN)).toBe(false)
-      expect(isValidNumber(0)).toBe(false)
+    it('must return true if passed value is a valid number', () => {
+      const number = 123;
+      expect(isValidNumber(number)).toBe(true);
     })
-
-    it('must return true if a valid number is passed', () => {
-      expect(isValidNumber(123)).toBe(true)
-      expect(isValidNumber(123.10)).toBe(true)
+    it('must return false if passed value is not a valid number', () => {
+      expect(isValidNumber('abc')).toBe(false);
+      expect(isValidNumber(NaN)).toBe(false);
+      expect(isValidNumber(Infinity)).toBe(false);
+      expect(isValidNumber(-Infinity)).toBe(false);
     })
-
   })
 })

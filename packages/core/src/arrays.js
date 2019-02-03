@@ -1,6 +1,5 @@
 import {
   isArray,
-  isInfinity,
   isObject,
   isNumber,
 } from './types'

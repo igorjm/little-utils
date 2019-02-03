@@ -1,28 +1,18 @@
-//@flow
+// @flow
 import { isNumber, isInfinity } from './types';
 
-
-/**
- *
- * @param {number} value
- * @param {array} exceptions
- */
-export function isValidNumber(value: number): boolean {
-  if (!value) {
+export function isValidNumber(number: number): boolean {
+  if (!isNumber(number)) {
     return false;
   }
 
-  if (!isNumber(value)) {
+  if (isInfinity(number)) {
     return false;
   }
 
-  if (isInfinity(value)) {
+  if (number === -Infinity) {
     return false;
   }
 
-  if (value === -Infinity) {
-    return false;
-  }
-
-  return true
+  return true;
 }
